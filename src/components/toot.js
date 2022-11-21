@@ -10,7 +10,6 @@ const tootStyle = {
 }
 
 function Toot({ toot }) {
-  console.log(toot)
   return (
     <div style={tootStyle}>
       <p>from:{toot.account.display_name}</p>
