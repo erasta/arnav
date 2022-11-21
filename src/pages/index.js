@@ -155,14 +155,14 @@ function IndexPage() {
     },
   ])
 
-
-
   return (
     <Layout>
       <h1>בודק משהו בשביל הערנב🐇🐇🐇</h1>
       <h2>מצטער, מינימום השקעה היום</h2>
-      <h3>חצרוצים:</h3>
-      <Toot/> <Toot/> <Toot/>
+      <h3>חצרוצים: {toots.length}</h3>
+      {toots.map(function (toot,i) {
+        return <Toot toot={toot} key={i}/>
+      })}
     </Layout>
   )
 }
