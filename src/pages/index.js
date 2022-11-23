@@ -11,12 +11,14 @@ function IndexPage() {
 
   useEffect(() => {
     // Make a request from tooot.im
-    const sites = ["tooot.im"]
+    const sites = ["tooot.im","hed.im","kishkush.net","hayu.sh"]
+    var tootList = []
     sites.forEach(function (url) {
       axios
         .get(`https://${url}/api/v1/timelines/public?local=true`)
         .then(function (response) {
-          setToots(response.data)
+          tootList=[...tootList, ...response.data]
+          setToots(tootList.sort(function(a, b){return a.created_at - b.created_at}))
         })
         .catch(function (error) {
           console.log(error)
