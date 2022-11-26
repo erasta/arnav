@@ -18,7 +18,7 @@ function IndexPage() {
         .get(`https://${url}/api/v1/timelines/public?local=true`)
         .then(function (response) {
           tootList=[...tootList, ...response.data]
-          setToots(tootList.sort(function(a, b){return a.created_at.localeCompare(b.created_at)}))
+          setToots(tootList.sort(function(b, a){return a.created_at.localeCompare(b.created_at)}))
         })
         .catch(function (error) {
           console.log(error)
