@@ -11,13 +11,17 @@ const tootStyle = {
 
 function Toot({ toot }) {
   return (
-    <div style={tootStyle}>
-      <p>from:{toot.account.display_name}</p>
-      <p>date:{toot.created_at}</p>
-      <p>{(toot.content)}</p>
-      <p>media: {toot.media_attachments.length > 0?'yes':'no'}</p>
-    </div>
+    <iframe src={toot.url + "/embed"} width="100%">
+    </iframe>
   )
+//   return (
+//     <div style={tootStyle}>
+//       <p>from:{toot.account.display_name}</p>
+//       <p>date:{toot.created_at}</p>
+//       <p>{(toot.content)}</p>
+//       <p>media: {toot.media_attachments.length > 0?'yes':'no'}</p>
+//     </div>
+//   )
 }
 
 export default Toot
