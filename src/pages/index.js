@@ -11,7 +11,7 @@ function IndexPage() {
 
   useEffect(() => {
     // Make a request from tooot.im
-    const sites = ["tooot.im","hed.im","kishkush.net","hayu.sh"]
+    const sites = ["tooot.im","hed.im","kishkush.net","hayu.sh","leftodon.social","pirsamti.com"]
     var tootList = []
     sites.forEach(function (url) {
       axios
