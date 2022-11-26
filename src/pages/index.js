@@ -12,13 +12,13 @@ function IndexPage() {
   useEffect(() => {
     // Make a request from tooot.im
     const sites = ["tooot.im","hed.im","kishkush.net","hayu.sh","leftodon.social","pirsamti.com"]
-    var tootList = []
     sites.forEach(function (url) {
       axios
         .get(`https://${url}/api/v1/timelines/public?local=true`)
         .then(function (response) {
-          tootList=[...tootList, ...response.data]
-          setToots(tootList.sort(function(a, b){return a.created_at - b.created_at}))
+          const tootList=[...toots, ...response.data]
+          tootList.sort(function(a, b){return a.created_at - b.created_at})
+          setToots(tootList)
         })
         .catch(function (error) {
           console.log(error)
